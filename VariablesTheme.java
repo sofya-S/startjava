@@ -34,14 +34,14 @@ public class VariablesTheme {
 
         System.out.println("\n4. Display min and max values for numeric data types");
         byte byteVal = Byte.MAX_VALUE;
-        System.out.println("initial value for byte - " + byteVal + ", incremented value for byte - " + (byteVal++)
-         + ", decremented value for byte - " + (byteVal--));
+        System.out.println("initial value for byte - " + byteVal + ", incremented value for byte - " + (++byteVal)
+         + ", decremented value for byte - " + (--byteVal));
         short shortVal = Short.MAX_VALUE;
-        System.out.println("initial value for short - " + shortVal + ", incremented value for short - " + (shortVal++)
-         + ", decremented value for short - " + (shortVal--));
+        System.out.println("initial value for short - " + shortVal + ", incremented value for short - " + (++shortVal)
+         + ", decremented value for short - " + (--shortVal));
         long longVal = Long.MAX_VALUE;
-        System.out.println("initial value for long - " + longVal + ", incremented value for long - " + (longVal ++)
-         + ", decremented value for long - " + (longVal--));
+        System.out.println("initial value for long - " + longVal + ", incremented value for long - " + (++longVal)
+         + ", decremented value for long - " + (--longVal));
 
         System.out.println("\n5. Swapping variable values");
         int x = 2;
@@ -76,13 +76,17 @@ public class VariablesTheme {
         System.out.println((int) charE + " - " + charE);
 
         System.out.println("\n7. Display amount of hundreds, tens and ones in a number");
-        int num = 123;
-        int numOnes = num % 100 % 10;
-        int numTens = num / 10 % 10;
-        int numHundreds = num / 100;
-        System.out.println("Number " + num + " has " + numHundreds + " hundreds.");
-        System.out.println("Number " + num + " has " + numTens + " tens.");
-        System.out.println("Number " + num + " has " + numOnes + " ones.");
+        int num;
+        int ones;
+        int tens;
+        int hundreds;
+        num = 123;
+        ones = num % 10;
+        tens = num / 10 % 10;
+        hundreds = num / 100;
+        System.out.println("Number " + num + " has " + hundreds + " hundreds.");
+        System.out.println("Number " + num + " has " + tens + " tens.");
+        System.out.println("Number " + num + " has " + ones + " ones.");
 
         System.out.println("\n8. Console output of ASCII-art");
         char slash = 47;
@@ -99,14 +103,14 @@ public class VariablesTheme {
                 backSlash + underscore + underscore + backSlash);
 
         System.out.println("\n9. Product and sum of digits");
-        int numOriginal = 345;
-        int numHundred = numOriginal / 100;
-        int numTen = numOriginal / 10 % 10;
-        int numOne = numOriginal % 10;
-        int sumDigits = numHundred + numTen + numOne;
-        int prodDigits = numHundred * numTen * numOne;
-        System.out.println("Sum of digits for " + numOriginal + " = " + sumDigits);
-        System.out.println("Product of digits for " + numOriginal + " = " + prodDigits);
+        num = 345;
+        ones = num % 10;
+        tens = num / 10 % 10;
+        hundreds = num / 100;
+        int sumDigits = hundreds + tens + ones;
+        int prodDigits = hundreds * tens * ones;
+        System.out.println("Sum of digits for " + num + " = " + sumDigits);
+        System.out.println("Product of digits for " + num + " = " + prodDigits);
 
         System.out.println("\n10. Seconds transformation");
         int totalSeconds  = 86399;
