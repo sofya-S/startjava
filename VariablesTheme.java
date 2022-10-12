@@ -1,6 +1,6 @@
 public class VariablesTheme {
-    public static void main(String[] args) {
-        System.out.println("\n1. Variables creation and values console output");
+  public static void main(String[] args) {
+    System.out.println("\n1. Variables creation and values console output");
         byte win = 10;
         short ram = 16;
         int bit = 64;
@@ -34,14 +34,14 @@ public class VariablesTheme {
 
         System.out.println("\n4. Display min and max values for numeric data types");
         byte byteVal = Byte.MAX_VALUE;
-        System.out.println("initial value for byte - " + byteVal + ", incremented value for byte - " + (++byteVal)
-         + ", decremented value for byte - " + (--byteVal));
+        System.out.println("initial num for byte - " + byteVal + ", incremented num for byte - " + (++byteVal)
+                + ", decremented num for byte - " + (--byteVal));
         short shortVal = Short.MAX_VALUE;
-        System.out.println("initial value for short - " + shortVal + ", incremented value for short - " + (++shortVal)
-         + ", decremented value for short - " + (--shortVal));
+        System.out.println("initial num for short - " + shortVal + ", incremented num for short - " + (++shortVal)
+                + ", decremented num for short - " + (--shortVal));
         long longVal = Long.MAX_VALUE;
-        System.out.println("initial value for long - " + longVal + ", incremented value for long - " + (++longVal)
-         + ", decremented value for long - " + (--longVal));
+        System.out.println("initial num for long - " + longVal + ", incremented num for long - " + (++longVal)
+                + ", decremented num for long - " + (--longVal));
 
         System.out.println("\n5. Swapping variable values");
         int x = 2;
@@ -76,28 +76,24 @@ public class VariablesTheme {
         System.out.println((int) charE + " - " + charE);
 
         System.out.println("\n7. Display amount of hundreds, tens and ones in a number");
-        int num;
-        int ones;
-        int tens;
-        int hundreds;
-        num = 123;
-        ones = num % 10;
-        tens = num / 10 % 10;
-        hundreds = num / 100;
+        int num = 123;
+        int ones = num % 10;
+        int tens = num / 10 % 10;
+        int hundreds = num / 100;
         System.out.println("Number " + num + " has " + hundreds + " hundreds.");
         System.out.println("Number " + num + " has " + tens + " tens.");
         System.out.println("Number " + num + " has " + ones + " ones.");
 
         System.out.println("\n8. Console output of ASCII-art");
-        char slash = 47;
-        char backSlash = 92;
-        char underscore = 95;
-        char rightHook = 40;
-        char leftHook = 41;
-        char space = 32;
+        char slash = 0x002f;
+        char backSlash = 0x005c;
+        char underscore = 0x005f;
+        char rightParentheses = 0x0028;
+        char leftParentheses = 0x0029;
+        char space = 0x0020;
         System.out.println("" + space + space + space + space + space + slash + backSlash);
         System.out.println("" + space + space + space + space + slash + space + space + backSlash);
-        System.out.println("" + space + space + space + slash + underscore + rightHook + space + leftHook + backSlash);
+        System.out.println("" + space + space + space + slash + underscore + rightParentheses + space + leftParentheses + backSlash);
         System.out.println("" + space + space + slash + space + space + space + space + space + space + backSlash);
         System.out.println("" + space + slash + underscore + underscore + underscore + underscore + slash + 
                 backSlash + underscore + underscore + backSlash);
