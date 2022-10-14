@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-public class GuessNumber{
+public class GuessNumber {
 
-        	public static void main(String[] args) {
+            public static void main(String[] args) {
             int random = (int) (Math.random() * 100 + 1);
             Scanner sc = new Scanner(System.in);
-            while(true) {
+            while(random != 0) {
                 System.out.print("Enter your guess (1 to 100): ");
                 int guess = sc.nextInt();
                 if(guess > random){
