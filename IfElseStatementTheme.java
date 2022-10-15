@@ -47,14 +47,14 @@ public class IfElseStatementTheme {
             System.out.println(someNum + " is awesome");            
         } else if(someNum > 0) {
             System.out.print(someNum + " is a positive ");
-            if(someNum % 2 == 0){
+            if(someNum % 2 == 0) {
                 System.out.print("even number");
             } else {
                 System.out.println("odd number");
             }
         } else {
             System.out.print(someNum + " is a negative ");
-            if(someNum % 2 == 0){
+            if(someNum % 2 == 0) {
                 System.out.print("even number");
             } else {
                 System.out.println("odd number");
