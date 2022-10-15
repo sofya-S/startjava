@@ -1,6 +1,6 @@
 public class IfElseStatementTheme {
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println("\n1. Translation from pseudocode to Java");
         int age = 21;
         if(age > 20) {
@@ -43,17 +43,24 @@ public class IfElseStatementTheme {
 
         System.out.println("\n3. Defining a number");
         int someNum = -13;
-        if(someNum > 0 & someNum % 2 == 0) {
-            System.out.println(someNum + " is a positive even number");
-        } else if(someNum > 0 & someNum % 2 != 0){
-            System.out.println(someNum + " is a positive odd number");
-        } else if(someNum < 0 & someNum % 2 == 0) {
-            System.out.println(someNum + " is a negative even number");
-        } else if(someNum < 0 & someNum % 2 != 0){
-            System.out.println(someNum + " is a negative odd number");
+        if(someNum == 0){
+            System.out.println(someNum + " is awesome");            
+        } else if(someNum > 0) {
+            System.out.print(someNum + " is a positive ");
+            if(someNum % 2 == 0){
+                System.out.print("even number");
+            } else {
+                System.out.println("odd number");
+            }
         } else {
-            System.out.println(someNum + " is awesome");
+            System.out.print(someNum + " is a negative ");
+            if(someNum % 2 == 0){
+                System.out.print("even number");
+            } else {
+                System.out.println("odd number");
+            }            
         }
+
 
         System.out.println("\n4. Finding same digits in a number");
         int firstNum = 761;
@@ -64,8 +71,8 @@ public class IfElseStatementTheme {
         int secondHundreds = secondNum / 100;
         int secondTens = secondNum / 10 % 10;
         int secondOnes = secondNum % 10;
-        System.out.println("Digits of first number are " + firstHundreds + ", " + firstTens + " and " + firstOnes + 
-                "; digits of second number are " + secondHundreds + ", " + secondTens + " and " + secondOnes);
+        System.out.println("Digits of first number are " + firstHundreds + ", " + firstTens + " and " + firstOnes
+                + "; digits of second number are " + secondHundreds + ", " + secondTens + " and " + secondOnes);
         if(firstHundreds == secondHundreds) {
             System.out.println("Matching hundreds are " + firstHundreds + " and " + secondHundreds);
         } else {
@@ -84,11 +91,11 @@ public class IfElseStatementTheme {
 
         System.out.println("\n5. Defining a letter, number or symbol by it`s code");
         char someChar = '\u0057';             
-        if('a' <= someChar && someChar <= 'z') {
+        if(someChar >= 'a' && someChar <= 'z') {
             System.out.println(someChar + " lowercase letter");
-        } else if('A' <= someChar && someChar <= 'Z') {
+        } else if(someChar >= 'A' && someChar <= 'Z') {
             System.out.println(someChar + " is an uppercase letter");
-        } else if('0' <= someChar && someChar <= '9') {
+        } else if(someChar >= '0' && someChar <= '9') {
             System.out.println(someChar + " is a number");
         } else {
             System.out.println(someChar + " is neither a letter, nor a number");
@@ -104,15 +111,15 @@ public class IfElseStatementTheme {
         } else {
             interest = (deposit * 5) / 100;
         }
-        System.out.println("Deposit equals " + deposit + ", accrued interest equals " + interest);
+        System.out.println("Deposit equals " + deposit + ", accrued interest equals " + interest
+                 + ", total sum equals " + (deposit + interest));
 
         System.out.println("\n7.Finding grades for subjects");
         int histPercent = 59;
-        int compSciPercent = 91;
-        int meanPercent = (histPercent + compSciPercent)/2;
+        int csPercent = 91;
         int histGrade;
         if(histPercent > 91) {
-            histGrade = 6;
+            histGrade = 5;
         } else if(histPercent > 73) {
             histGrade = 4;
         } else if(histPercent > 60) {
@@ -121,8 +128,9 @@ public class IfElseStatementTheme {
             histGrade = 2;
         }
         int compSciGrade;
+        int meanPercent = (histPercent + csPercent) / 2;
         if(meanPercent > 91) {
-            compSciGrade = 6;
+            compSciGrade = 5;
         } else if(meanPercent > 73) {
             compSciGrade = 4;
         } else if(meanPercent > 60) {
@@ -130,7 +138,7 @@ public class IfElseStatementTheme {
         } else {
             compSciGrade = 2;
         }
-        int meanGrade = (histGrade + compSciGrade)/2;
+        int meanGrade = (histGrade + compSciGrade) / 2;
         System.out.println("History grade is " + histGrade);
         System.out.println("Computer Science grade is " + compSciGrade);
         System.out.println("Mean grade equals " + meanGrade);
@@ -140,7 +148,7 @@ public class IfElseStatementTheme {
         int monthlyRent = 5000;
         int monthlyPrimeCost = 9000;
         int monthlyMeanIncome = 13000;
-        int yearlyProfit = (monthlyMeanIncome - monthlyPrimeCost - monthlyRent)*12;
+        int yearlyProfit = (monthlyMeanIncome - monthlyPrimeCost - monthlyRent) * 12;
         if(yearlyProfit > 0) {
             System.out.println("Yearly profit equals + " + yearlyProfit +" rubles");
         } else {
@@ -148,19 +156,23 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n9.Dollar bill count");
-        int withdraval = 567;
+        int hundredDollarBills = 10;
         int tenDollarBills = 5;
+        int oneDollarBills = 50;
+        System.out.println("There are " + hundredDollarBills + " hundred, " + tenDollarBills + " ten and "
+                + oneDollarBills + " one-dollar bills");
+        int withdraval = 567;             
         int requiredHundreds = withdraval / 100;
         int requiredTens = withdraval / 10 % 10;
         int requiredOnes = withdraval % 100 % 10;
+        int recalculatedWithdraval = (requiredHundreds * 100) +(requiredTens * 10) + requiredOnes;
         int shortage = requiredTens - tenDollarBills;
-        int recalculatedWithdraval = (requiredHundreds *100) +(requiredTens *10) + requiredOnes;
-        System.out.println(requiredHundreds +" hundreds, " + requiredTens +" tens and " + requiredOnes
-                + " ones are required for withdraval of" + recalculatedWithdraval + " dollars");
         if(requiredTens > tenDollarBills) {
-            System.out.println("Not enough ten-dollar bills, gotta use additional " + shortage*10 + " one-dollar bills");
+            System.out.print("Not enough ten-dollar bills, gotta use additional " + shortage * 10
+                + " one-dollar bills to make required for withdraval of ");
         } else {
-            System.out.println("Sufficial amount of bills of all denominations for withdraval");
+            System.out.print("Sufficial amount of bills of all denominations to make required for withdraval of ");
         }
-        }
+        System.out.println(recalculatedWithdraval + " dollars");
+    }
 }
