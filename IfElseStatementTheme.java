@@ -125,11 +125,11 @@ public class IfElseStatementTheme {
             histGrade = 2;
         }
         int compSciGrade;
-        if(meanPercent > 91) {
+        if(csPercent > 91) {
             compSciGrade = 5;
-        } else if(meanPercent > 73) {
+        } else if(csPercent > 73) {
             compSciGrade = 4;
-        } else if(meanPercent > 60) {
+        } else if(csPercent > 60) {
             compSciGrade = 3;
         } else {
             compSciGrade = 2;
