@@ -45,20 +45,17 @@ public class IfElseStatementTheme {
         int someNum = -13;
         if(someNum == 0){
             System.out.println(someNum + " is awesome");            
-        } else if(someNum > 0) {
-            System.out.print(someNum + " is a positive ");
-            if(someNum % 2 == 0) {
+        } else {
+            if(someNum > 0) {
+                System.out.print(someNum + " is a positive ");
+            } else {
+                System.out.print(someNum + " is a negative ");
+            }
+            if(someNum % 2 == 0){
                 System.out.print("even number");
             } else {
                 System.out.println("odd number");
             }
-        } else {
-            System.out.print(someNum + " is a negative ");
-            if(someNum % 2 == 0) {
-                System.out.print("even number");
-            } else {
-                System.out.println("odd number");
-            }            
         }
 
 
@@ -128,7 +125,6 @@ public class IfElseStatementTheme {
             histGrade = 2;
         }
         int compSciGrade;
-        int meanPercent = (histPercent + csPercent) / 2;
         if(meanPercent > 91) {
             compSciGrade = 5;
         } else if(meanPercent > 73) {
@@ -139,6 +135,7 @@ public class IfElseStatementTheme {
             compSciGrade = 2;
         }
         int meanGrade = (histGrade + compSciGrade) / 2;
+        int meanPercent = (histPercent + csPercent) / 2;
         System.out.println("History grade is " + histGrade);
         System.out.println("Computer Science grade is " + compSciGrade);
         System.out.println("Mean grade equals " + meanGrade);
