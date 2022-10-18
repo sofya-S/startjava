@@ -14,13 +14,9 @@ public class CalculatorTask {
         } else if(operator == '/') {
             result = a / b;
         } else if(operator == '^') {
-            result = 1;
-            int interim;
-            int count = 0;
-            while(count < b) {
-            interim = result * a;
-            result = interim;
-            count++;
+            result = a;
+            for(int i = 1; i < b; i++) {
+            result *=  a;
             }
         } else {
             result = a % b;
