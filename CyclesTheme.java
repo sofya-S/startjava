@@ -8,7 +8,7 @@ public class CyclesTheme{
         int odd = 0;
         do {
             count = count + 1;
-            if(count % 2 == 0){
+            if(count % 2 == 0) {
                 even++;
             } else {
                 odd++;
@@ -20,7 +20,7 @@ public class CyclesTheme{
         int num;
         num = 10;
         System.out.println("Numbers are:\n" + num);
-        for(int i = 5; num > -1; i++){
+        for(int i = 5; num > -1; i++) {
             num = num - i;
             System.out.println(num);
         }
@@ -42,12 +42,12 @@ public class CyclesTheme{
         System.out.println("\n4. Display digits in several lines");
         count = 0;
         int zero = 0;
-        for(int i = 1; i < 24; i = i + 2){
+        for(int i = 1; i < 24; i = i + 2) {
             System.out.printf("%5d", i);
             count++;
-            if(count % 5 == 0){
+            if(count % 5 == 0) {
                 System.out.println("");
-            } else if(i >= 23){
+            } else if(i >= 23) {
                 while (count % 5 != 0) {
                     System.out.printf("%5d", zero);
                     count++;
@@ -61,7 +61,7 @@ public class CyclesTheme{
             int interim = num / 10;
             int digit;
             digit = num - interim*10;
-            if(digit % 2 == 0){
+            if(digit % 2 == 0) {
                 System.out.println(num + " contains even number of ones");
             } else{
                 System.out.println(num + " contains odd number of ones");
@@ -74,23 +74,23 @@ public class CyclesTheme{
         char asterisk = 42;
         char sharp = 35;
         count = 0;
-        for(int i = 1; i <= 50; i++){
+        for(int i = 1; i <= 50; i++) {
             System.out.print(asterisk);
             count++;
-            if(count % 10 == 0){
+            if(count % 10 == 0) {
                 System.out.println("");
             } else {
                 System.out.print("");
             }
         }
-        while (count > 35){
+        while (count > 35) {
             count--;
             System.out.print(sharp);
             if (count == 45 || count == 41 || count == 38 || count == 36 || count == 35) {
                 System.out.println("");
             } else {
                 System.out.print("");
-            }       
+            }        
         }
         do {
             System.out.print(dollar);
@@ -107,11 +107,11 @@ public class CyclesTheme{
         String header2 = "Char";
         System.out.printf("%5s %5s %n", header1, header2);
         char xXx = 0;
-        for(int i = 0; i < 123; i++){
+        for(int i = 0; i < 123; i++) {
             xXx++;
-            if((int)xXx % 2 == 0 & (int)xXx > 96){
+            if((int)xXx % 2 == 0 & (int)xXx > 96) {
                 System.out.printf("%5s %5s %n",(int)xXx, xXx);;
-            } else if((int)xXx % 2 != 0 & (int)xXx < 48){
+            } else if((int)xXx % 2 != 0 & (int)xXx < 48) {
                 System.out.printf("%5s %5s %n",(int)xXx, xXx);
             }
         }
@@ -126,7 +126,7 @@ public class CyclesTheme{
             remainder = num % 10; 
             sum = (sum*10) + remainder;
             num = num / 10;
-            if(temp == sum){
+            if(temp == sum) {
                 System.out.println(sum + " is a palindrome");
             } else {
                 System.out.print("");
@@ -144,18 +144,18 @@ public class CyclesTheme{
             Math.pow(j, 2);
             System.out.print(j);
             counter++;
-            if(counter < 4){
+            if(counter < 4) {
                 sumFirst = sumFirst + j;
             } else {
                 sumSecond = sumSecond + j;
             }
-            if(counter == 3){
+            if(counter == 3) {
                 System.out.println(" sum equals " + sumFirst);
-            } else if (counter == 6){
+            } else if (counter == 6) {
                 System.out.println(" sum equals " + sumSecond);
             }
             }
-            if(sumFirst == sumSecond){
+            if(sumFirst == sumSecond) {
                 System.out.println("number is lucky");
             } else {
                 System.out.println("number isn`t lucky");
@@ -163,13 +163,13 @@ public class CyclesTheme{
 
         System.out.println("\n10. Pythagorean multiplication table");
         System.out.print("  | ");
-        for(count = 2; count <= 9; count++){
+        for(count = 2; count <= 9; count++) {
             System.out.printf("%4d", count);
             }
         System.out.println("");
         System.out.println("------------------------------------");
         for (count = 2; count <= 9; ++count) {
-            System.out.print(count + " | ");    
+            System.out.print(count + " | ");      
             for (num = 2; num <= 9; ++num) {            
                 System.out.printf("%4d", (count*num));
             }
