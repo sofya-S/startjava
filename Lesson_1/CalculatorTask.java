@@ -16,7 +16,7 @@ public class CalculatorTask {
         } else if(operator == '^') {
             result = a;
             for(int i = 1; i < b; i++) {
-            result *=  a;
+                result *=  a;
             }
         } else {
             result = a % b;

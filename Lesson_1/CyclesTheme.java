@@ -1,4 +1,4 @@
-public class CyclesTheme{
+public class CyclesTheme {
 
     public static void main(String[] args) {
         System.out.println("\n1. Even and odd numbers count");
@@ -7,14 +7,15 @@ public class CyclesTheme{
         int even = 0;
         int odd = 0;
         do {
-            count = count + 1;
+            count +=  1;
             if(count % 2 == 0) {
                 even++;
             } else {
                 odd++;
-        }
+            }
         } while(count < 20);
-        System.out.println("There are " + even + " even numbers and " + odd + " odd numbers in the [-10, 21] interval.");
+        System.out.println("There are " + even + " even numbers and " + odd
+                + " odd numbers in the [-10, 21] interval.");
 
         System.out.println("\n2. Display numbers in an interval in descending order");
         int num;
@@ -63,7 +64,7 @@ public class CyclesTheme{
             digit = num - interim*10;
             if(digit % 2 == 0) {
                 System.out.println(num + " contains even number of ones");
-            } else{
+            } else {
                 System.out.println(num + " contains odd number of ones");
             }
             num--;
@@ -109,10 +110,10 @@ public class CyclesTheme{
         char xXx = 0;
         for(int i = 0; i < 123; i++) {
             xXx++;
-            if((int)xXx % 2 == 0 & (int)xXx > 96) {
-                System.out.printf("%5s %5s %n",(int)xXx, xXx);;
-            } else if((int)xXx % 2 != 0 & (int)xXx < 48) {
-                System.out.printf("%5s %5s %n",(int)xXx, xXx);
+            if((int) xXx % 2 == 0 & (int)xXx > 96) {
+                System.out.printf("%5s %5s %n",(int) xXx, xXx);;
+            } else if((int) xXx % 2 != 0 & (int) xXx < 48) {
+                System.out.printf("%5s %5s %n",(int) xXx, xXx);
             }
         }
 
@@ -124,7 +125,7 @@ public class CyclesTheme{
         temp = num;
         while (num >= 1) {
             remainder = num % 10; 
-            sum = (sum*10) + remainder;
+            sum = (sum * 10) + remainder;
             num = num / 10;
             if(temp == sum) {
                 System.out.println(sum + " is a palindrome");
@@ -169,9 +170,9 @@ public class CyclesTheme{
         System.out.println("");
         System.out.println("------------------------------------");
         for (count = 2; count <= 9; ++count) {
-            System.out.print(count + " | ");      
-            for (num = 2; num <= 9; ++num) {            
-                System.out.printf("%4d", (count*num));
+            System.out.print(count + " | ");
+            for (num = 2; num <= 9; ++num) {
+                System.out.printf("%4d", (count * num));
             }
             System.out.println();
         }
