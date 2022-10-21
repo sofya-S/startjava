@@ -2,66 +2,86 @@ public class CyclesTheme {
 
     public static void main(String[] args) {
         System.out.println("\n1. Even and odd numbers count");
-        int count;
-        count = -10;
-        int even = 0;
-        int odd = 0;
+        int count = -10;
+        int evenSum = 0;
+        int oddSum = 0;
         do {
             count +=  1;
             if(count % 2 == 0) {
-                even++;
+                evenSum += count;
             } else {
-                odd++;
-            }
+                oddSum += count;
+        }
         } while(count < 20);
-        System.out.println("There are " + even + " even numbers and " + odd
-                + " odd numbers in the [-10, 21] interval.");
+        System.out.println("In the [-10, 21] interval sum of even numbers equals "
+                + evenSum + " and sum of odd numbers equals " + oddSum);
 
         System.out.println("\n2. Display numbers in an interval in descending order");
-        int num;
-        num = 10;
-        System.out.println("Numbers are:\n" + num);
-        for(int i = 5; num > -1; i++) {
-            num = num - i;
-            System.out.println(num);
+        int num = 10;
+        int numS = 5;
+        int numT = -1;
+        int max;
+        int min;
+        System.out.print("Numbers are:\n");
+        if(num > numS && num > numT) {
+            max = num;
+            if(numS > numT) {
+                min = numT;
+            } else {
+                min = numS;
+            }
+        } else if(numS > num && numS > numT) {
+            max = numS;
+            if(num > numT) {
+                min = numT;
+            } else {
+                min = num;
+            }
+        } else {
+            max = numS;
+            if(num > numT) {
+                min = numT;
+            } else {
+                min = num;
+            }                
+        }
+        for(int i = max; i > min + 1; i--) {
+            max--;
+            System.out.println(max);
         }
 
         System.out.println("\n3. Display number`s digits reversed and summed");
         num = 1234;
-        int sum;
-        sum = 0;
-        System.out.println("reversed numbers are: ");
+        int sum = 0;
+        System.out.println("Reversed numbers are: ");
         while (num > 0) {
-            int interim = num / 10;
-            int digit = num - interim * 10;
-            sum = sum + digit;
-            num = interim;
+            int digit = num % 10;
+            sum += digit;
+            num /= 10;
             System.out.println(digit);
         }
         System.out.println("Sum of digit equals: " + sum);
 
         System.out.println("\n4. Display digits in several lines");
         count = 0;
-        int zero = 0;
-        for(int i = 1; i < 24; i = i + 2) {
+        for(int i = 1; i < 24; i += 2) {
             System.out.printf("%5d", i);
             count++;
             if(count % 5 == 0) {
-                System.out.println("");
-            } else if(i >= 23) {
-                while (count % 5 != 0) {
-                    System.out.printf("%5d", zero);
-                    count++;
-                }
+                System.out.println();
+            } else {
+                System.out.print("");
             }
+        }
+        while (count % 5 != 0) {
+            System.out.printf("%5d", 0);
+            count++;
         }
 
         System.out.println("\n\n5. Check parity of last digit in a number");
         num = 3141591;
         while (num == 3141591) {
-            int interim = num / 10;
-            int digit;
-            digit = num - interim*10;
+            int digit = num % 10;
             if(digit % 2 == 0) {
                 System.out.println(num + " contains even number of ones");
             } else {
@@ -79,7 +99,7 @@ public class CyclesTheme {
             System.out.print(asterisk);
             count++;
             if(count % 10 == 0) {
-                System.out.println("");
+                System.out.println();
             } else {
                 System.out.print("");
             }
@@ -88,7 +108,7 @@ public class CyclesTheme {
             count--;
             System.out.print(sharp);
             if (count == 45 || count == 41 || count == 38 || count == 36 || count == 35) {
-                System.out.println("");
+                System.out.println();
             } else {
                 System.out.print("");
             }        
@@ -97,7 +117,7 @@ public class CyclesTheme {
             System.out.print(dollar);
             count--;
             if (count == 34 || count == 32|| count == 29 || count == 27 || count == 26) {
-                System.out.println("");
+                System.out.println();
             } else {
                 System.out.print("");
             }
@@ -121,8 +141,7 @@ public class CyclesTheme {
         num = 1234321;
         sum = 0;
         int remainder = 0;
-        int temp;
-        temp = num;
+        int temp = num;
         while (num >= 1) {
             remainder = num % 10; 
             sum = (sum * 10) + remainder;
@@ -167,7 +186,7 @@ public class CyclesTheme {
         for(count = 2; count <= 9; count++) {
             System.out.printf("%4d", count);
             }
-        System.out.println("");
+        System.out.println();
         System.out.println("------------------------------------");
         for (count = 2; count <= 9; ++count) {
             System.out.print(count + " | ");
