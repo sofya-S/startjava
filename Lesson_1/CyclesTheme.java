@@ -6,48 +6,47 @@ public class CyclesTheme {
         int evenSum = 0;
         int oddSum = 0;
         do {
-            count +=  1;
             if(count % 2 == 0) {
                 evenSum += count;
             } else {
                 oddSum += count;
-        }
+            }
+            count++;
         } while(count < 20);
         System.out.println("In the [-10, 21] interval sum of even numbers equals "
                 + evenSum + " and sum of odd numbers equals " + oddSum);
 
         System.out.println("\n2. Display numbers in an interval in descending order");
         int num = 10;
-        int numS = 5;
-        int numT = -1;
+        int num1 = 5;
+        int num2 = -1;
         int max;
         int min;
         System.out.print("Numbers are:\n");
-        if(num > numS && num > numT) {
+        if(num > num1 && num > num2) {
             max = num;
-            if(numS > numT) {
-                min = numT;
+            if(num1 > num2) {
+                min = num2;
             } else {
-                min = numS;
+                min = num1;
             }
-        } else if(numS > num && numS > numT) {
-            max = numS;
-            if(num > numT) {
-                min = numT;
+        } else if(num1 > num && num1 > num2) {
+            max = num1;
+            if(num > num2) {
+                min = num2;
             } else {
                 min = num;
             }
         } else {
-            max = numS;
-            if(num > numT) {
-                min = numT;
+            max = num1;
+            if(num > num2) {
+                min = num2;
             } else {
                 min = num;
             }                
         }
-        for(int i = max; i > min + 1; i--) {
-            max--;
-            System.out.println(max);
+        for (int i = --max; i > min + 1; i--) {
+            System.out.print(i);
         }
 
         System.out.println("\n3. Display number`s digits reversed and summed");
@@ -69,8 +68,6 @@ public class CyclesTheme {
             count++;
             if(count % 5 == 0) {
                 System.out.println();
-            } else {
-                System.out.print("");
             }
         }
         while (count % 5 != 0) {
@@ -91,66 +88,71 @@ public class CyclesTheme {
             }
 
         System.out.println("\n6. Draw figures in console");
-        char dollar = 36;
-        char asterisk = 42;
-        char sharp = 35;
         count = 0;
         for(int i = 1; i <= 50; i++) {
-            System.out.print(asterisk);
+            System.out.print("*");
             count++;
             if(count % 10 == 0) {
                 System.out.println();
-            } else {
-                System.out.print("");
             }
         }
-        while (count > 35) {
-            count--;
-            System.out.print(sharp);
-            if (count == 45 || count == 41 || count == 38 || count == 36 || count == 35) {
-                System.out.println();
-            } else {
-                System.out.print("");
-            }        
+        int base = 5;
+        int top;
+        int size = 1;
+        while(base >= size) {
+            top = 1;
+            while(top <= base) {
+                System.out.print("#");
+                top++;
+            }
+            base--;
+            System.out.println();
         }
+        int half = 5;
         do {
-            System.out.print(dollar);
-            count--;
-            if (count == 34 || count == 32|| count == 29 || count == 27 || count == 26) {
+            int line = 9;
+            do {
+                System.out.print("$");
+                --line;
+            } while (line / 2 >= half);
+            System.out.println();
+            half--;
+        } while (half > 3);
+        int otherHalf = 3;
+        do { 
+            int temp = otherHalf; 
+            while (temp-- > 0) 
+                System.out.print("$");
                 System.out.println();
-            } else {
-                System.out.print("");
-            }
-        } while(count > 26);
+                otherHalf--;
+        } while (otherHalf > 0);
 
         System.out.println("\n7. Print ASCII symbols in console");
-        String header1 = "Dec";
-        String header2 = "Char";
-        System.out.printf("%5s %5s %n", header1, header2);
-        char xXx = 0;
+        System.out.printf("%5s %5s %n", "Dec", "Char");
+        char symb = 0;
         for(int i = 0; i < 123; i++) {
-            xXx++;
-            if((int) xXx % 2 == 0 & (int)xXx > 96) {
-                System.out.printf("%5s %5s %n",(int) xXx, xXx);;
-            } else if((int) xXx % 2 != 0 & (int) xXx < 48) {
-                System.out.printf("%5s %5s %n",(int) xXx, xXx);
+            symb++;
+            if(symb % 2 == 0 & symb > 96) {
+                System.out.printf("%5s %5s %n",(int) symb, symb);;
+            } else if(symb % 2 != 0 & symb < 48) {
+                System.out.printf("%5s %5s %n",(int) symb, symb);
             }
         }
 
         System.out.println("\n8. Check if number is a palindrome");
         num = 1234321;
-        sum = 0;
-        int remainder = 0;
+        int reversedNum = 0;
+        int digit = 0;
         int temp = num;
-        while (num >= 1) {
-            remainder = num % 10; 
-            sum = (sum * 10) + remainder;
-            num = num / 10;
-            if(temp == sum) {
-                System.out.println(sum + " is a palindrome");
-            } else {
-                System.out.print("");
-            }
+        while (num > 0) {
+            digit = num % 10; 
+            reversedNum = (reversedNum * 10) + digit;
+            num /= 10;
+        }
+        if(temp == reversedNum) {
+            System.out.println(reversedNum + " is a palindrome");
+        } else {
+            System.out.println(reversedNum + " is NOT a palindrome");
         }
 
         System.out.println("\n9. Check whether number is lucky");
