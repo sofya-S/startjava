@@ -12,7 +12,7 @@ public class CyclesTheme {
                 oddSum += count;
             }
             count++;
-        } while(count < 20);
+        } while(count <= 20);
         System.out.println("In the [-10, 21] interval sum of even numbers equals "
                 + evenSum + " and sum of odd numbers equals " + oddSum);
 
@@ -22,7 +22,7 @@ public class CyclesTheme {
         int num2 = -1;
         int max;
         int min;
-        System.out.print("Numbers are:\n");
+        System.out.println("Numbers are:\n");
         if(num > num1 && num > num2) {
             max = num;
             if(num1 > num2) {
@@ -132,9 +132,9 @@ public class CyclesTheme {
         char symb = 0;
         for(int i = 0; i < 123; i++) {
             symb++;
-            if(symb % 2 == 0 & symb > 96) {
-                System.out.printf("%5s %5s %n",(int) symb, symb);;
-            } else if(symb % 2 != 0 & symb < 48) {
+            if(symb % 2 == 0 && symb > 96) {
+                System.out.printf("%5s %5s %n",(int) symb, symb);
+            } else if(symb % 2 != 0 && symb < 48) {
                 System.out.printf("%5s %5s %n",(int) symb, symb);
             }
         }
@@ -142,14 +142,13 @@ public class CyclesTheme {
         System.out.println("\n8. Check if number is a palindrome");
         num = 1234321;
         int reversedNum = 0;
-        int digit = 0;
-        int temp = num;
+        int copyNum = num;
         while (num > 0) {
-            digit = num % 10; 
+            int digit = num % 10; 
             reversedNum = (reversedNum * 10) + digit;
             num /= 10;
         }
-        if(temp == reversedNum) {
+        if(copyNum == reversedNum) {
             System.out.println(reversedNum + " is a palindrome");
         } else {
             System.out.println(reversedNum + " is NOT a palindrome");
@@ -167,9 +166,9 @@ public class CyclesTheme {
             System.out.print(j);
             counter++;
             if(counter < 4) {
-                sumFirst = sumFirst + j;
+                sumFirst += j;
             } else {
-                sumSecond = sumSecond + j;
+                sumSecond += j;
             }
             if(counter == 3) {
                 System.out.println(" sum equals " + sumFirst);
