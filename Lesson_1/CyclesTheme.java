@@ -17,36 +17,23 @@ public class CyclesTheme {
                 + evenSum + " and sum of odd numbers equals " + oddSum);
 
         System.out.println("\n2. Display numbers in an interval in descending order");
-        int num = 10;
-        int num1 = 5;
-        int num2 = -1;
-        int max;
-        int min;
+        int min = 10;
+        int max = 5;
+        int num = -1;
         System.out.println("Numbers are:\n");
-        if(num > num1 && num > num2) {
-            max = num;
-            if(num1 > num2) {
-                min = num2;
-            } else {
-                min = num1;
-            }
-        } else if(num1 > num && num1 > num2) {
-            max = num1;
-            if(num > num2) {
-                min = num2;
-            } else {
-                min = num;
-            }
-        } else {
-            max = num1;
-            if(num > num2) {
-                min = num2;
-            } else {
-                min = num;
-            }                
+        if(max < 10) {
+            max = 10;
+        } else if(max < -1) {
+            max = -1;
         }
-        for (int i = --max; i > min + 1; i--) {
-            System.out.print(i);
+        if(min < 10) {
+            min = 10;
+        } else if(-1 < min) {
+            min = -1;
+        }
+        for(int i = max; i >= min; i--) {
+            System.out.println(max);
+            max--;
         }
 
         System.out.println("\n3. Display number`s digits reversed and summed");
@@ -96,36 +83,41 @@ public class CyclesTheme {
                 System.out.println();
             }
         }
-        int base = 5;
-        int top;
+        System.out.println();        
+        int lenght = 5;
+        int line;
         int size = 1;
-        while(base >= size) {
-            top = 1;
-            while(top <= base) {
+        while(lenght >= size) {
+            line = 1;
+            while(line <= lenght) {
                 System.out.print("#");
-                top++;
+                line++;
             }
-            base--;
+            lenght--;
             System.out.println();
         }
+        System.out.println();
         int half = 5;
+        int otherHalf = 3;
         do {
-            int line = 9;
+            line = 9;
             do {
                 System.out.print("$");
                 --line;
             } while (line / 2 >= half);
             System.out.println();
             half--;
-        } while (half > 3);
-        int otherHalf = 3;
-        do { 
-            int temp = otherHalf; 
-            while (temp-- > 0) 
-                System.out.print("$");
-                System.out.println();
+            if (half == 3) {
+                do { 
+                int temp = otherHalf; 
+                while (temp-- > 0) 
+                    System.out.print("$");
+                    System.out.println();
                 otherHalf--;
-        } while (otherHalf > 0);
+                } while (otherHalf > 0);
+            }
+        } while (half > 3);
+
 
         System.out.println("\n7. Print ASCII symbols in console");
         System.out.printf("%5s %5s %n", "Dec", "Char");
